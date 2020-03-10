@@ -4,11 +4,17 @@ services:
       build:
         context: .
         dockerfile: ./web/nginx/Dockerfile
-      ports:
-          - "80:80"
+#      ports:
+#          - "8000:80"
+      volumes: ./src/html:/var/www/html
       depends_on:
           - php
   php:
       build:
         context: .
         dockerfile: ./php/php-fpm/Dockerfile
+      volumes: ./src/html:/var/www/html
+#  db:
+#      buld:
+#        context: .
+#      volumes: ./db/data:/var/lib/mysql
