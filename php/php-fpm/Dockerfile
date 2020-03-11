@@ -3,6 +3,7 @@
 #COPY ./src/html /var/www/html
 FROM centos:7
 
+RUN mkdir -p /var/www/html
 RUN groupadd -g1000 vagrant
 RUN useradd -u1000 -g1000 vagrant
 RUN yum update -y

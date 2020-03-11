@@ -15,5 +15,5 @@ WORKDIR /etc/nginx
 CMD ["/sbin/init"]
 
 # Expose ports.
-EXPOSE 8000
+EXPOSE 80
 EXPOSE 443
