@@ -28,3 +28,16 @@ services:
       - 18080:8080
     volumes:
       - ./jenkins_home:/var/jenkins_home
+  gitbucket:
+    container_name: gitbucket
+    image: gitbucket/gitbucket
+    ports:
+      - 8080:8080
+    volumes:
+       - ~/gitbucket_home/:/gitbucket/
+#    environment:
+#       - VIRTUAL_HOST=gitbucket.chalkfinger.com
+#       - VIRTUAL_PORT=8080
+#       - CERT_NAME=mydomain
+#       - HTTPS_METHOD=noredirect
+    restart: always
